@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap&subset=cyrillic');
+
+body {
+    position: relative;
+    font-family: 'Roboto', sans-serif;
+    height: 100vh;
+    color: #00008f;
+}
+
+.pattern-bottom {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.pattern-top {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 300px;
+}
+
+.box {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.box__title {
+    font-size: 62px;
+    text-transform: uppercase;
+}
+
+.framework {
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+    font-weight: 300;
+    color: rgba(0,0,0,.7);
+}
