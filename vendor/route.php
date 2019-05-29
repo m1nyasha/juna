@@ -4,14 +4,20 @@ require_once 'vendor/status.php';
 getLib('rb');
 require_once 'commands/db.php';
 
-/*
+/**
+ * Отключаем Notice
+ */
+
+error_reporting(0);
+
+/**
  * Получаем нормальное имя контроллера и экшена, проверяя их наличие
  */
 
 $controllerName = (empty(getUrl(0))) ? 'MainController' : ucfirst(getUrl(0)) . 'Controller';
 $actionName = (empty(getUrl(1))) ? 'actionIndex' : 'action' . ucfirst(getUrl(1));
 
-/*
+/**
  * Производим роутинг
  */
 

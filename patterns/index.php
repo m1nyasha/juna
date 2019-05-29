@@ -11,9 +11,8 @@
 </head>
 <body>
     <div class="box">
-        <h2 class="box__title"><?= $_GET['title'] ?></h2>
-        <p class="box__text">Сообщение: <?= $_GET['message'] ?></p>
-        <a href="/">Вернуться назад</a>
+        <h2 class="box__title"><?= $title ?></h2>
+        <p class="box__text">Сообщение: <?= $message ?></p>
     </div>
     <img src="/patterns/assets/img/header-cube-small-yellow.png" class="pattern-bottom">
     <img src="/patterns/assets/img/header-cube-big-blue.png" class="pattern-top">

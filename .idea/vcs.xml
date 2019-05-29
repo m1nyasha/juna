@@ -3,5 +3,14 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$/.." vcs="Git" />
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/old/git/getAPI-fetch" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/old/git/just-one-php-freamework" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/old/git/novigrad" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/old/git/parthner" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/old/git/restapi" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/old/git/restful-api" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/old/git/soft24" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/old/git/topbasket" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/old/git/web-traning" vcs="Git" />
   </component>
 </project>

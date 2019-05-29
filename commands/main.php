@@ -94,61 +94,6 @@ function getLib($name)
 }
 
 /**
- * Функция отвечает за регистрацию пользователей
- * Аргумент - $data принимает массив данных, который может состоять из ключей type, body, path, uniq
- * Аргумент - $table отвечает за название таблицы, в которой будут сохранятся пользователи
- * @param $data
- * @param $table
- */
-
-function user_registration($data, $table)
-{
-    $user = R::dispense($table);
-    $fields = array_keys($data);
-    $errors = [];
-
-    foreach ($fields as $field) {
-
-        if ($data[$field]['type'] == 'text') { // text
-            $user->$field = $data[$field]['body'];
-        } elseif ($data[$field]['type'] == 'file') { //file
-
-            $dir = '';
-
-            if (isset($data[$field]['uniq']) && $data[$field]['uniq'] == true) {
-                $dir = $data[$field]['path'] . '/' . time() . '_' . $_FILES[$field]['name'];
-            } else {
-                $dir = $data[$field]['path'] . '/' . $_FILES[$field]['name'];
-            }
-
-            if (move_uploaded_file($_FILES[$field]['tmp_name'], $dir)) {
-                $user->$field = $dir;
-            } else {
-                $errors['status'] = false;
-                $errors[$field] = 'Error upload file';
-            }
-
-        } elseif ($data[$field]['type'] == 'password') { //password
-            $user->$field = password_hash($data[$field]['body'], PASSWORD_DEFAULT);
-        }
-
-    }
-
-    if ($errors != []) {
-        echo json_encode($errors);
-    } else {
-        if (R::store($user)) {
-            http_response_code(200);
-            echo json_encode(["status" => true]);
-        } else {
-            $errors['status'] = false;
-            $errors['server'] = 'Error save entry';
-            echo json_encode($errors);
-        }
-    }
-}
-
-/**
  * Функция возвращает отфильтрованныую строку по htmlspecialchars и trim
  * @param $str
  * @return string
@@ -167,7 +112,7 @@ function str_filter($str)
 
 function pattern($title, $message)
 {
-    header('Location: patterns/index.php?title=' . $title . '&message=' . $message);
+    require_once 'patterns/index.php';
     die();
 }
 
@@ -195,4 +140,20 @@ function getRule($name)
         pattern('RULES', 'вы пытаетесь отобразить не существующее правило');
     }
     require_once 'vendor/rules/' . $name . '.php';
+}
+
+/**
+ * Получаем request метод
+ * @return mixed
+ */
+
+function getRM () {
+    return $_SERVER['REQUEST_METHOD'];
+}
+
+function getCommand($name) {
+    if (!file_exists('commands/' . $name . '.php')) {
+        pattern('MODEL', 'вы пытаетесь отобразить не существующую модель');
+    }
+    require_once 'commands/' . $name . '.php';
 }
