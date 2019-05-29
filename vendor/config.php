@@ -3,13 +3,13 @@
 return [
     "db" => [
         "host" => "localhost",
-        "db_name" => "test",
+        "db_name" => "db_name",
         "username" => "root",
-        "password" => "root"
+        "password" => ""
     ],
-    "SECRET_KEY" => '7awbevr8qb6978rvbq89vb6q39478tv6b9783t', //укажите случайные символы для секретного ключа
+    "SECRET_KEY" => '', //укажите случайные символы для секретного ключа
     "user_auth" => [
-        "table" => "users",
+        "table" => "_users",
         "columns" => [
             "login" => "username",
             "password" => "password"

@@ -7,7 +7,7 @@
 <body>
 <section class="hello">
     <div class="hello-box animated fadeIn">
-        <p class="hello__text">Just One Framework </p>
+        <p class="hello__text">Just PHP Framework </p>
         <h1 class="hello__title">Hello, World!</h1>
 
     </div>
