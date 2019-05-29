@@ -7,7 +7,7 @@
 <body>
 <section class="hello">
     <div class="hello-box animated fadeIn">
-        <p class="hello__text">Just PHP Framework </p>
+        <p class="hello__text">Juna PHP Framework </p>
         <h1 class="hello__title"><?= $data['hello'] ?></h1>
 
     </div>

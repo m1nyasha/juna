@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e848f23a-93b7-4264-bb5f-ee3a32167d70" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/app/controllers/MainController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/MainController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/404.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/404.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/config.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/route.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/route.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/patterns/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/patterns/index.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,10 +15,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/vendor/route.php">
+        <entry file="file://$PROJECT_DIR$/patterns/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="550">
-              <caret line="24" column="63" selection-start-line="24" selection-start-column="63" selection-end-line="24" selection-end-column="63" />
+            <state relative-caret-position="176">
+              <caret line="7" column="34" selection-start-line="7" selection-start-column="34" selection-end-line="7" selection-end-column="34" />
             </state>
           </provider>
         </entry>
@@ -78,7 +77,6 @@
         <option value="$PROJECT_DIR$/vendor/rules/route.php" />
         <option value="$PROJECT_DIR$/app/views/test.php" />
         <option value="$PROJECT_DIR$/app/controllers/PostsController.php" />
-        <option value="$PROJECT_DIR$/app/views/404.php" />
         <option value="$PROJECT_DIR$/commands/.htaccess" />
         <option value="$PROJECT_DIR$/vendor/status.php" />
         <option value="$PROJECT_DIR$/commands/db.php" />
@@ -88,12 +86,13 @@
         <option value="$PROJECT_DIR$/test.php" />
         <option value="$PROJECT_DIR$/app/views/auth.php" />
         <option value="$PROJECT_DIR$/commands/user.php" />
-        <option value="$PROJECT_DIR$/patterns/index.php" />
-        <option value="$PROJECT_DIR$/app/views/index.php" />
         <option value="$PROJECT_DIR$/app/models/hello.php" />
         <option value="$PROJECT_DIR$/vendor/config.php" />
         <option value="$PROJECT_DIR$/app/controllers/MainController.php" />
         <option value="$PROJECT_DIR$/vendor/route.php" />
+        <option value="$PROJECT_DIR$/app/views/index.php" />
+        <option value="$PROJECT_DIR$/app/views/404.php" />
+        <option value="$PROJECT_DIR$/patterns/index.php" />
       </list>
     </option>
   </component>
@@ -127,6 +126,16 @@
             <path>
               <item name="htdocs" type="b2602c69:ProjectViewProjectNode" />
               <item name="htdocs" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="htdocs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="htdocs" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="htdocs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="htdocs" type="462c0819:PsiDirectoryNode" />
+              <item name="patterns" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="htdocs" type="b2602c69:ProjectViewProjectNode" />
@@ -190,7 +199,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="53623000" />
+    <option name="totallyTimeSpent" value="53794000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -222,13 +231,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/.htaccess">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="5" column="29" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/TestController.php" />
     <entry file="file://$PROJECT_DIR$/app/views/head.php" />
     <entry file="file://$PROJECT_DIR$/app/views/header.php" />
@@ -277,13 +279,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/parts/head.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="8" selection-start-column="8" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/patterns/db.php" />
     <entry file="file://$PROJECT_DIR$/patterns/secrect-key.php" />
     <entry file="file://$PROJECT_DIR$/app/controllers/RegController.php" />
@@ -299,13 +294,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/test.php" />
     <entry file="file://$PROJECT_DIR$/app/controllers/PostsController.php" />
-    <entry file="file://$PROJECT_DIR$/app/views/404.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="10" column="48" selection-start-line="10" selection-start-column="48" selection-end-line="10" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/posts.php" />
     <entry file="file://$PROJECT_DIR$/app/.htaccess">
       <provider selected="true" editor-type-id="text-editor">
@@ -388,20 +376,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/patterns/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="20" column="7" lean-forward="true" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="10" column="31" lean-forward="true" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/hello.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="66">
@@ -423,10 +397,45 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.htaccess">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="5" column="29" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/route.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="550">
           <caret line="24" column="63" selection-start-line="24" selection-start-column="63" selection-end-line="24" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/404.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="9" column="35" selection-start-line="9" selection-start-column="35" selection-end-line="9" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/parts/head.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="8" selection-start-column="8" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="9" column="35" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/patterns/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="7" column="34" selection-start-line="7" selection-start-column="34" selection-end-line="7" selection-end-column="34" />
         </state>
       </provider>
     </entry>
