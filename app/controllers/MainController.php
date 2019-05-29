@@ -1,5 +1,8 @@
 <?php
+
+getModel('hello');
+
 function actionIndex()
 {
-    render('index');
+    render('index', ["hello" => hello()]);
 }

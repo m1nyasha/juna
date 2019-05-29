@@ -24,9 +24,6 @@ $actionName = (empty(getUrl(1))) ? 'actionIndex' : 'action' . ucfirst(getUrl(1))
 if (file_exists('app/controllers/' . $controllerName . '.php')) {
     require_once 'app/controllers/' . $controllerName . '.php';
 
-    //Данное правило переписывает роутинг специально для контроллера posts
-    $actionName = ($controllerName == 'PostsController' && ($actionName != 'actionIndex')) ? 'actionIndex' : $actionName;
-
     if (function_exists($actionName)) {
         $actionName();
     } else {
