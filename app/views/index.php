@@ -1,7 +1,7 @@
 <!doctype html>
-<html lang="ru">
+<html lang="en">
 <head>
-    <title>Just Framework</title>
+    <title>Juna PHP Framework</title>
     <?= renderPart('head') ?>
 </head>
 <body>

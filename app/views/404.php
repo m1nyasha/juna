@@ -1,13 +1,13 @@
 <!doctype html>
-<html lang="ru">
+<html lang="en">
 <head>
-    <title>Just Framework</title>
+    <title>Juna PHP Framework</title>
     <?= renderPart('head') ?>
 </head>
 <body>
 <section class="hello">
     <div class="hello-box animated fadeIn">
-        <p class="hello__text">Juna One Framework </p>
+        <p class="hello__text">Juna PHP Framework </p>
         <h1 class="hello__title">opps.. 404</h1>
     </div>
     <p class="successful"><b>Framework</b> is successfully installed, you can get to work</p>
