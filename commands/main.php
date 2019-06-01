@@ -147,13 +147,42 @@ function getRule($name)
  * @return mixed
  */
 
-function getRM () {
+function getRM()
+{
     return $_SERVER['REQUEST_METHOD'];
 }
 
-function getCommand($name) {
+/**
+ * Подключаем команду вне main
+ * @param $name
+ */
+
+function getCommand($name)
+{
     if (!file_exists('commands/' . $name . '.php')) {
         pattern('MODEL', 'вы пытаетесь отобразить не существующую модель');
     }
     require_once 'commands/' . $name . '.php';
+}
+
+/**
+ * Функция отвечает за добавление данных в базу данных
+ * Примечаение: столбец "id" добавляется автоматически
+ * @param $data - принимает массив данных например - ["name_column" => $body]
+ * @param $table
+ * @return false|string
+ */
+
+function insertDB($data, $table)
+{
+    $config = include 'vendor/config.php';
+    if ($config['db']['status'] == false) {
+        pattern('insert DB', 'проверьте подключения к базе данных в /vendor/config.php');
+    }
+    $keys = array_keys($data);
+    $insert = R::dispense($table);
+    foreach ($keys as $key) {
+        $insert->$key = $data[$key];
+    }
+    return (R::store($insert)) ? json_encode(["status" => true]) : json_encode(["status" => false]);
 }

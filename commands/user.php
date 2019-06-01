@@ -2,8 +2,8 @@
 
 /**
  * Функция отвечает за регистрацию пользователей
- * Аргумент - $data принимает массив данных, который может состоять из ключей type, body, path, uniq
- * @param $data
+ * @param $data - принимает массив данных, который может состоять из ключей type, body, path, uniq
+ * @return false|string
  */
 
 function user_registration($data)
