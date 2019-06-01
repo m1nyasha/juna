@@ -3,14 +3,13 @@
 /**
  * Функция отвечает за регистрацию пользователей
  * Аргумент - $data принимает массив данных, который может состоять из ключей type, body, path, uniq
- * Аргумент - $table отвечает за название таблицы, в которой будут сохранятся пользователи
  * @param $data
- * @param $table
  */
 
-function user_registration($data, $table)
+function user_registration($data)
 {
-    $user = R::dispense($table);
+    $config = include 'vendor/config.php';
+    $user = R::dispense($config['user_auth']['table']);
     $fields = array_keys($data);
     $errors = [];
     $config = include 'vendor/config.php';
@@ -43,15 +42,15 @@ function user_registration($data, $table)
     }
 
     if ($errors != []) {
-        echo json_encode($errors);
+        return json_encode($errors);
     } else {
         if (R::store($user)) {
             http_response_code(200);
-            echo json_encode(["status" => true]);
+            return json_encode(["status" => true]);
         } else {
             $errors['status'] = false;
             $errors['server'] = 'Error save entry';
-            echo json_encode($errors);
+            return json_encode($errors);
         }
     }
 }

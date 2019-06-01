@@ -10,7 +10,7 @@ return [
     ],
     "SECRET_KEY" => '', //укажите случайные символы для секретного ключа
     "user_auth" => [
-        "table" => "_users",
+        "table" => "users",
         "columns" => [
             "login" => "username",
             "password" => "password"
