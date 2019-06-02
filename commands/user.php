@@ -14,6 +14,9 @@ function user_registration($data)
     $errors = [];
     $config = include 'vendor/config.php';
 
+    $column_login = $config['user_auth']['columns']['login'];
+    $column_password = $config['user_auth']['columns']['password'];
+
     foreach ($fields as $field) {
 
         if ($data[$field]['type'] == 'text') { // text
@@ -36,7 +39,15 @@ function user_registration($data)
             }
 
         } elseif ($data[$field]['type'] == 'password') { //password
-            $user->$field = password_hash($data[$field]['body'] . $config['SECRET_KEY'], PASSWORD_DEFAULT);
+            $user->$column_password = password_hash($data[$field]['body'] . $config['SECRET_KEY'], PASSWORD_DEFAULT);
+        } elseif ($data[$field]['type'] == 'login') { //password
+            $check_username = R::findOne($config['user_auth']['table'], "WHERE $column_login = ?", [$data[$field]['body']]);
+            if (isset($check_username)) {
+                $errors['status'] = false;
+                $errors["message"] = "Такой пользователь уже существует";
+            } else {
+                $user->$column_login = $data[$field]['body'];
+            }
         }
 
     }

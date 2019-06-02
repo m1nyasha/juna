@@ -15,5 +15,6 @@ return [
             "login" => "username",
             "password" => "password"
         ]
-    ]
+    ],
+    "session" => false
 ];

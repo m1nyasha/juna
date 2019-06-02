@@ -1,4 +1,5 @@
 <?php
+if ($config['session'] === true) session_start();
 require_once 'commands/main.php';
 require_once 'vendor/status.php';
 getLib('rb');
