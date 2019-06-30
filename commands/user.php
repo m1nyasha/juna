@@ -44,7 +44,7 @@ function user_registration($data)
             $check_username = R::findOne($config['user_auth']['table'], "WHERE $column_login = ?", [$data[$field]['body']]);
             if (isset($check_username)) {
                 $errors['status'] = false;
-                $errors["message"] = "Такой пользователь уже существует";
+                $errors["errors"] = "uniq_login";
             } else {
                 $user->$column_login = $data[$field]['body'];
             }
@@ -56,14 +56,15 @@ function user_registration($data)
         return json_encode($errors);
     } else {
         if (R::store($user)) {
-            http_response_code(200);
+            resCode(200);
             return json_encode(["status" => true]);
         } else {
             $errors['status'] = false;
-            $errors['server'] = 'Error save entry';
+            $errors['errors'] = 'Error save entry';
             return json_encode($errors);
         }
     }
+
 }
 
 /**
@@ -73,10 +74,62 @@ function user_registration($data)
  * @return bool
  */
 
-function user_authorization($login, $password) {
+function user_authorization($login, $password)
+{
     $config = include 'vendor/config.php';
     $table = $config['user_auth']['table'];
     $login_column = $config['user_auth']['columns']['login'];
     $user = R::findOne($table, "WHERE $login_column = ?", [$login]);
     return (password_verify($password . $config['SECRET_KEY'], $user[$config['user_auth']['columns']['password']])) ? true : false;
+}
+
+/**
+ * @param $login
+ * @return bool
+ */
+
+function check_auth_user($login)
+{
+    $config = include 'vendor/config.php';
+    $table = $config['user_auth']['table'];
+    $column_login = $config['user_auth']['columns']['login'];
+    $check = R::findOne($table, "WHERE $column_login = ?", [$login]);
+    return ($check) ? true : false;
+}
+
+/**
+ * @param $login
+ * @return NULL|\RedBeanPHP\OODBBean
+ */
+
+function load_user($login)
+{
+    $config = include 'vendor/config.php';
+    $table = $config['user_auth']['table'];
+    $column_login = $config['user_auth']['columns']['login'];
+    $user = R::findOne($table, "WHERE $column_login = ?", [$login]);
+    return $user;
+}
+
+/**
+ * @param $key
+ */
+
+function logout($key)
+{
+    unset($_SESSION[$key]);
+    session_destroy();
+}
+
+/**
+ * @param $login
+ * @return NULL|\RedBeanPHP\OODBBean
+ */
+
+function get_auth_user ($login) {
+    $config = include 'vendor/config.php';
+    $table = $config['user_auth']['table'];
+    $column_login = $config['user_auth']['columns']['login'];
+    $user = R::findOne($table, "WHERE $column_login = ?", [$_SESSION[$login]]);
+    return $user;
 }

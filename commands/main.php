@@ -153,7 +153,7 @@ function getRM()
 }
 
 /**
- * Подключаем команду вне main
+ * Подключаем команду вне main0
  * @param $name
  */
 
@@ -185,4 +185,77 @@ function insertDB($data, $table)
         $insert->$key = $data[$key];
     }
     return (R::store($insert)) ? json_encode(["status" => true]) : json_encode(["status" => false]);
+}
+
+/**
+ * Функция для загрузки изображения
+ * @param $data = $_FILES
+ * @param $rules - принимает 2 параметра format и size
+ * @param $image_name - название файла в $_FILES
+ * @param $path - путь загрузки
+ * @return false|string
+ */
+
+function image_upload($data, $rules, $image_name, $path)
+{
+    $res = [];
+    $format = false;
+    $size = false;
+    foreach ($rules['format'] as $rule) {
+        $format = ($data[$image_name]['type'] == $rule) ? true : $format;
+    }
+    $size = ($data[$image_name]['size'] > $rules['size']) ? false : true;
+
+    if ($size == true && $format == true) {
+        $dir = $path . time() . '_' . $data[$image_name]['name'];
+        if (move_uploaded_file($data[$image_name]['tmp_name'], $dir)) {
+            $res['status'] = true;
+            $res['path'] = $dir;
+        } else {
+            $res['status'] = false;
+            $res['image'] = false;
+        }
+    } else {
+        $res['status'] = false;
+        if ($size == false) {
+            $res['size'] = false;
+        } elseif ($format == false) {
+            $res['format'] = false;
+        }
+    }
+
+    return json_encode($res);
+}
+
+/**
+ * @param $table
+ * @param $column
+ * @param $data
+ * @return bool
+ */
+
+function check_filed_DB($table, $column, $data)
+{
+    $check = R::findOne($table, "WHERE $column = ?", [$data]);
+    return ($check) ? true : false;
+}
+
+/**
+ * @param $array
+ * @return false|string
+ */
+
+function json($array)
+{
+    header('Content-type: json/application');
+    return json_encode($array);
+}
+
+/**
+ * @param $link
+ */
+
+function redirect($link)
+{
+    header("Location: $link");
 }

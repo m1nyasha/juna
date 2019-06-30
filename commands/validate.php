@@ -45,8 +45,19 @@ function valid_equals_passwords($data)
     if ($data != $_POST['password_confirm']) return true;
 }
 
-function valid_full_name () {
+/**
+ * @param $data
+ * @return bool
+ */
 
+function valid_phone($data)
+{
+    $data = preg_replace('/\s|\+|-|\(|\)/','', $data); // удалим пробелы, и прочие не нужные знаки
+    if(is_numeric($data)) {
+        if (strlen($data) < 5) return true;
+    } else {
+        return true;
+    }
 }
 
 /**

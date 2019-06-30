@@ -2,13 +2,13 @@
 
 return [
     "db" => [
-        "status" => false,
+        "status" => true,
         "host" => "localhost",
-        "db_name" => "db",
+        "db_name" => "test",
         "username" => "root",
-        "password" => ""
+        "password" => "root"
     ],
-    "SECRET_KEY" => '', //укажите случайные символы для секретного ключа
+    "SECRET_KEY" => 'c23r23rv23r', //укажите случайные символы для секретного ключа
     "user_auth" => [
         "table" => "users",
         "columns" => [

@@ -1,5 +1,5 @@
 <?php
 
 function hello () {
-    return 'Hello, World!';
+    return 'Soon..';
 }
