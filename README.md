@@ -1,2 +1,2 @@
 # Juna PHP Framework
-This is new fast and simple PHP framework.
+Juna – это простой PHP фреймворк, основанный на функциональном программировании.
